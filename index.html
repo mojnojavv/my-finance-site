@@ -2,48 +2,57 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<title>Полезные товары</title>
+<title>Smart Shop Reviews</title>
 
 <style>
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #0b1220;
+  background: #0a0f1c;
   color: #fff;
 }
 
-/* Шапка */
+/* HEADER */
 header {
-  padding: 30px;
+  padding: 35px 20px;
   text-align: center;
   background: #111827;
 }
 
-/* Основная сетка */
-.layout {
+header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+header p {
+  opacity: 0.7;
+}
+
+/* LAYOUT */
+.wrapper {
   display: flex;
-  max-width: 1100px;
+  max-width: 1200px;
   margin: auto;
   padding: 20px;
   gap: 20px;
 }
 
-/* Левый блок (товары) */
+/* MAIN */
 .main {
   flex: 3;
 }
 
-/* Правый блок (банк) */
+/* SIDEBAR */
 .sidebar {
   flex: 1;
 }
 
-/* Карточки */
+/* CARDS */
 .card {
   background: #1f2937;
+  border-radius: 14px;
   padding: 18px;
   margin-bottom: 15px;
-  border-radius: 14px;
   transition: 0.2s;
 }
 
@@ -51,7 +60,16 @@ header {
   transform: translateY(-2px);
 }
 
-/* Кнопки */
+.tag {
+  display: inline-block;
+  background: #334155;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+/* BUTTONS */
 button {
   padding: 10px 14px;
   border: none;
@@ -62,23 +80,30 @@ button {
   font-weight: bold;
 }
 
-button.secondary {
+button.red {
   background: #ef4444;
 }
 
 .small {
-  opacity: 0.75;
   font-size: 13px;
+  opacity: 0.75;
 }
 
-/* Метки */
-.tag {
-  display: inline-block;
-  padding: 3px 8px;
-  background: #334155;
-  border-radius: 6px;
-  font-size: 12px;
-  margin-bottom: 8px;
+/* GRID FOR POSTS */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .wrapper {
+    flex-direction: column;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
 
@@ -87,61 +112,81 @@ button.secondary {
 <body>
 
 <header>
-<h1>Подборка полезных товаров</h1>
-<p>Лучшие вещи для жизни + удобная оплата через банки</p>
+<h1>Smart Shop Reviews</h1>
+<p>Обзоры товаров, новинки и полезные подборки</p>
 </header>
 
-<div class="layout">
+<div class="wrapper">
 
-<!-- ================= ТОВАРЫ ================= -->
+<!-- ================= MAIN CONTENT ================= -->
 <div class="main">
 
 <div class="card">
+<span class="tag">НОВИНКИ</span>
+<h2>🔥 Новые товары недели</h2>
+<p class="small">Свежие находки с маркетплейсов</p>
+<button>Смотреть новинки</button>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<span class="tag">ОБЗОР</span>
+<h3>📦 Товар #1</h3>
+<p class="small">Что это, зачем нужно и как использовать</p>
+<button>Читать обзор</button>
+</div>
+
+<div class="card">
+<span class="tag">ОБЗОР</span>
+<h3>🛠 Товар #2</h3>
+<p class="small">Разбор и реальный смысл покупки</p>
+<button>Читать обзор</button>
+</div>
+
+<div class="card">
 <span class="tag">ТОП</span>
-<h2>🛒 Полезные товары</h2>
-<p class="small">Недорогие вещи, которые реально упрощают жизнь</p>
-<button>Смотреть подборку</button>
+<h3>🏠 Для дома</h3>
+<p class="small">Лучшие товары для быта</p>
+<button>Смотреть</button>
 </div>
 
 <div class="card">
-<h3>📦 Пример товара #1</h3>
-<p class="small">Добавь сюда товары с Ozon / WB / AliExpress</p>
-<button>Перейти к товару</button>
-</div>
-
-<div class="card">
-<h3>🏠 Товары для дома</h3>
-<p class="small">Организация, комфорт, бытовые улучшения</p>
-<button>Открыть</button>
-</div>
-
-<div class="card">
-<h3>📱 Гаджеты</h3>
-<p class="small">Полезные недорогие устройства</p>
+<span class="tag">ГАДЖЕТЫ</span>
+<h3>📱 Техника</h3>
+<p class="small">Недорогие полезные устройства</p>
 <button>Смотреть</button>
 </div>
 
 </div>
 
-<!-- ================= БАНК (второстепенно) ================= -->
+</div>
+
+<!-- ================= SIDEBAR ================= -->
 <div class="sidebar">
 
 <div class="card">
 <span class="tag">ОПЛАТА</span>
 <h3>🏦 Альфа-Банк</h3>
 <p class="small">
-Удобная карта для покупок товаров: кэшбэк и онлайн-оплата
+Карта для покупок товаров, кэшбэк и онлайн-оплата
 </p>
-
 <a href="https://alfabank.ru" target="_blank">
-<button class="secondary">Открыть карту</button>
+<button class="red">Оформить карту</button>
 </a>
 </div>
 
 <div class="card">
-<h3>💳 Зачем банк тут?</h3>
+<h3>💡 Как это работает</h3>
 <p class="small">
-Для оплаты покупок, кэшбэка и онлайн-заказов товаров
+Ты смотришь товары → переходишь → покупаешь через удобную карту
+</p>
+</div>
+
+<div class="card">
+<h3>🚀 Для чего сайт</h3>
+<p class="small">
+Обзоры, новинки и подборки полезных вещей
 </p>
 </div>
 
