@@ -2,95 +2,149 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<title>Полезные финансы и товары</title>
+<title>Полезные товары</title>
+
 <style>
 body {
-  font-family: Arial;
   margin: 0;
+  font-family: Arial, sans-serif;
   background: #0b1220;
-  color: white;
+  color: #fff;
 }
 
+/* Шапка */
 header {
   padding: 30px;
   text-align: center;
   background: #111827;
 }
 
-.container {
-  max-width: 900px;
+/* Основная сетка */
+.layout {
+  display: flex;
+  max-width: 1100px;
   margin: auto;
   padding: 20px;
+  gap: 20px;
 }
 
+/* Левый блок (товары) */
+.main {
+  flex: 3;
+}
+
+/* Правый блок (банк) */
+.sidebar {
+  flex: 1;
+}
+
+/* Карточки */
 .card {
   background: #1f2937;
-  padding: 20px;
-  margin: 15px 0;
-  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 15px;
+  border-radius: 14px;
+  transition: 0.2s;
 }
 
-a { color: #60a5fa; text-decoration: none; }
+.card:hover {
+  transform: translateY(-2px);
+}
 
+/* Кнопки */
 button {
   padding: 10px 14px;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   background: #3b82f6;
   color: white;
   cursor: pointer;
+  font-weight: bold;
+}
+
+button.secondary {
+  background: #ef4444;
 }
 
 .small {
-  opacity: 0.8;
-  font-size: 14px;
+  opacity: 0.75;
+  font-size: 13px;
+}
+
+/* Метки */
+.tag {
+  display: inline-block;
+  padding: 3px 8px;
+  background: #334155;
+  border-radius: 6px;
+  font-size: 12px;
+  margin-bottom: 8px;
 }
 </style>
+
 </head>
 
 <body>
 
 <header>
-<h1>Полезные подборки</h1>
-<p>Товары и банковские продукты в одном месте</p>
+<h1>Подборка полезных товаров</h1>
+<p>Лучшие вещи для жизни + удобная оплата через банки</p>
 </header>
 
-<div class="container">
+<div class="layout">
 
-<!-- ТОВАРЫ -->
-<div class="card">
-<h2>🛒 Раздел: Товары</h2>
-<p class="small">Недорогие и полезные вещи для жизни</p>
-<button>Открыть товары</button>
-</div>
+<!-- ================= ТОВАРЫ ================= -->
+<div class="main">
 
 <div class="card">
-<h3>Пример товара</h3>
-<p>Добавляешь сюда реальные товары с маркетплейсов</p>
-<a href="https://example.com" target="_blank">
-<button>Перейти к товару</button>
-</a>
-</div>
-
-<!-- БАНКИ -->
-<div class="card">
-<h2>🏦 Раздел: Банки</h2>
-<p class="small">Карты, кэшбэк и финансовые продукты</p>
-<button>Открыть банки</button>
-</div>
-
-<div class="card">
-<h3>Альфа-Банк</h3>
-<p>Карта с кэшбэком и бесплатным обслуживанием (пример)</p>
-<a href="https://alfabank.ru" target="_blank">
-<button>Перейти в Альфа-Банк</button>
-</a>
-</div>
-
-<div class="card">
-<h3>Другие банки</h3>
-<p>Сравнение выгодных карт (Тинькофф, Сбер и т.д.)</p>
+<span class="tag">ТОП</span>
+<h2>🛒 Полезные товары</h2>
+<p class="small">Недорогие вещи, которые реально упрощают жизнь</p>
 <button>Смотреть подборку</button>
+</div>
+
+<div class="card">
+<h3>📦 Пример товара #1</h3>
+<p class="small">Добавь сюда товары с Ozon / WB / AliExpress</p>
+<button>Перейти к товару</button>
+</div>
+
+<div class="card">
+<h3>🏠 Товары для дома</h3>
+<p class="small">Организация, комфорт, бытовые улучшения</p>
+<button>Открыть</button>
+</div>
+
+<div class="card">
+<h3>📱 Гаджеты</h3>
+<p class="small">Полезные недорогие устройства</p>
+<button>Смотреть</button>
+</div>
+
+</div>
+
+<!-- ================= БАНК (второстепенно) ================= -->
+<div class="sidebar">
+
+<div class="card">
+<span class="tag">ОПЛАТА</span>
+<h3>🏦 Альфа-Банк</h3>
+<p class="small">
+Удобная карта для покупок товаров: кэшбэк и онлайн-оплата
+</p>
+
+<a href="https://alfabank.ru" target="_blank">
+<button class="secondary">Открыть карту</button>
+</a>
+</div>
+
+<div class="card">
+<h3>💳 Зачем банк тут?</h3>
+<p class="small">
+Для оплаты покупок, кэшбэка и онлайн-заказов товаров
+</p>
+</div>
+
 </div>
 
 </div>
